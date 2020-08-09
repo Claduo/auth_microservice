@@ -1,0 +1,5 @@
+db:
+  database:  auth_microservice_development
+  # database: ads_development
+  user: auth
+  password: auth_toor
