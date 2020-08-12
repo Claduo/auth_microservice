@@ -1,0 +1,3 @@
+class AuthRoutes < Application
+
+end

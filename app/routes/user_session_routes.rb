@@ -1,0 +1,2 @@
+class UserSessionRoutes < Application
+end
