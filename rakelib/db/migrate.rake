@@ -1,7 +1,6 @@
 namespace :db do
   desc 'Run database migrations'
-  task :migrate, %i[version] => :settings do |t,args|
-    require 'sequel/core'
+  task :migrate, %i[version] => :db_settings do |t,args|
     Sequel.extension :migration
 
     Sequel.connect(Settings.db.to_hash) do |db|
@@ -9,5 +8,7 @@ namespace :db do
       version = args.version.to_i if args.version
       Sequel::Migrator.run(db, migrations, target: version)
     end
+
+    Rake::Task['db:create_schema'].execute
   end
 end
