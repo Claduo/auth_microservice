@@ -8,3 +8,6 @@ en:
           blank: Enter description
         city:
           blank: Enter city
+      user:
+        name: Invalid name format
+        email: Invalid email format

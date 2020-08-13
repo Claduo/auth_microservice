@@ -15,7 +15,7 @@ module Auths
       validate_password
 
       unless failure?
-        @session = UserSession.new(user: @user, uuid: SecureRandom.uuid)
+        @session = UserSession.new(user: @user)
         if session.valid?
           @session.save
         else
@@ -26,9 +26,7 @@ module Auths
 
     def validate_password
       is_password_valid = !!@user&.authenticate(@user_params.password)
-      unless is_password_valid
-        return fail!(I18n.t(:invalid_password, scope: 'services.errors.sessions'))
-      end
+      return fail!(I18n.t(:invalid_password, scope: 'services.errors.sessions')) unless is_password_valid
     end
   end
 end

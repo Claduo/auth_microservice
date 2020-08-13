@@ -9,7 +9,7 @@ class User < Sequel::Model
     super
 
     result = UserParamsContract.new.call(values)
-    result.errors.each do |key, messages|
+    result.errors.to_h.each do |key, messages|
       messages.each do |message|
         errors.add(key, message)
       end

@@ -1,7 +1,7 @@
 class AuthRoutes < Application
   helpers AuthHelper
 
-  post '' do
+  post '/' do
     result = Auths::AuthenticationService.call(decoded_session_token['uuid'])
 
     if result.success?

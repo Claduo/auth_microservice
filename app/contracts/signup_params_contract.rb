@@ -1,7 +1,7 @@
 class SignupParamsContract < Dry::Validation::Contract
   params do
-    required(:email).value(:string)
-    required(:name).value(:string)
-    required(:password).value(:string)
+    required(:email).filled(:string)
+    required(:name).filled(:string)
+    required(:password).filled(:string)
   end
 end

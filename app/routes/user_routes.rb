@@ -1,5 +1,5 @@
 class UserRoutes < Application
-  post '' do
+  post '/' do
     signup_params = validate_with!(SignupParamsContract)
     result = Auths::CreateUserService.call(user_params: signup_params.to_h)
 

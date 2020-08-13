@@ -2,7 +2,7 @@ module AuthHelper
   AUTH_TOKEN = %r{\ABearer (?<token>.+)\z}
 
   def decoded_session_token
-    JwtHelper.decode(get_encoded_token)
+    JwtEncoder.decode(get_encoded_token)
   rescue JWT::DecodeError
     {}
   end
