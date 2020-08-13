@@ -1,4 +1,4 @@
-module JwtHelper
+module JwtEncoder
   extend self
 
   SECRET = Settings.secret_code
