@@ -63,6 +63,7 @@ GEM
       activesupport (>= 4.2)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
+    jwt (2.2.1)
     minitest (5.14.1)
     multi_json (1.14.1)
     mustermann (1.1.1)
@@ -127,6 +128,7 @@ DEPENDENCIES
   factory_bot (~> 5.2.0)
   fast_jsonapi (~> 1.5)
   i18n (~> 1.8.2)
+  jwt
   pg (~> 1.2.3)
   puma (~> 4.3.0)
   rack-test (~> 1.1.0)
