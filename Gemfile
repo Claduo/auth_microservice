@@ -17,6 +17,7 @@ gem 'sequel', '~> 5.32.0'
 gem 'sequel_secure_password'
 gem 'sequel-seed'
 gem 'jwt'
+gem 'bunny'
 
 gem 'dry-initializer', '~> 3.0.3'
 gem 'dry-validation', '~> 1.5.0'
