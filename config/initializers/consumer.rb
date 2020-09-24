@@ -4,7 +4,7 @@ queue = channel.queue('auth', durable: true)
 
 queue.subscribe(manual_ack: true) do |delivery_info, properties, payload|
   payload = JSON.parse(payload)
-
+  Thread.current[:request_id] = properties.headers['request_id']
   decoded_token = JwtEncoder.decode(payload['token']) rescue {}
   result = Auths::AuthenticationService.call(decoded_token['uuid'])
 
