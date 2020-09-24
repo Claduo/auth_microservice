@@ -7,3 +7,8 @@ pagination:
 rabbitmq:
   consumer_pool: 10
 secret_code: super_secret_code
+app:
+  name: auth
+logger:
+  path: log/app.log
+  level: info
