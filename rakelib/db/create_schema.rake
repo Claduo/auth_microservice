@@ -2,7 +2,7 @@ namespace :db do
   desc "Create DB Schema"
   task create_schema: :db_settings do
 
-    Sequel.connect(Settings.db.to_hash) do |db|
+    Sequel.connect(Settings.db.url || Settings.db.to_hash) do |db|
       db.extension :schema_dumper
       db_schema = db.dump_schema_migration
 

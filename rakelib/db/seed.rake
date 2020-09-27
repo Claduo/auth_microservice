@@ -6,7 +6,7 @@ namespace :db do
     Dir["../../app/models/**/*.rb"].each { |file| require file}
 
 
-    Sequel.connect(Settings.db.to_hash) do |db|
+    Sequel.connect(Settings.db.url || Settings.db.to_hash) do |db|
       Sequel.extension :seed
       Sequel::Seed.setup(ENV['RACK_ENV'].to_sym)
 
